@@ -1,0 +1,31 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+
+def oneAway(str1, str2):
+    one = len(str1)
+    two = len(str2)
+    
+    if(abs(one-two) > 1): #if one string is much shorter than the other
+        return False
+        
+    mini = min(one, two);
+    i = 0
+    j = 0
+    
+    while(i < mini and str1[i] == str2[i]):
+        i += 1
+    
+    while(j < mini - i and str1[one - 1 - j] == str2[two - 1- j]):
+        j += 1
+        
+    return  (one + two - mini - 1) == (i + j)
+    
+    
+def main():
+    input1 = "pale"
+    input2 = "bake"
+    print(oneAway(input1, input2))
+    
+
+if __name__ == "__main__":
+    main()
